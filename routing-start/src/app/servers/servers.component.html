@@ -2,8 +2,8 @@
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
       <a
-      [routerLink]="['/servers',5,'edit']"
-      [queryParams]="{allowEdit:1}"
+      [routerLink]="['/servers', server.id]"
+      [queryParams]="{allowEdit:server.id===3?'1':'0'}"
       fragment="loading"
         href="#"
         class="list-group-item"
@@ -11,13 +11,14 @@
         {{ server.name }}
       </a>
     </div>
-    <button class="btn btn-primary" (click)="OnReload()">Reload ME!!!!!!</button>
   </div>
   <div class="col-xs-12 col-sm-4">
+    <router-outlet></router-outlet>
+    <!-- <button class="btn btn-primary" (click)="OnReload()">Reload ME!!!!!!</button> -->
     <!-- <a routerLink="/servers">Reload me</a> -->
-    <app-edit-server></app-edit-server>
+    <!-- <app-edit-server></app-edit-server> -->
     <hr>
-    <app-server></app-server>
+    <!-- <app-server></app-server> -->
   </div>
 </div>
 
